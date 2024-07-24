@@ -15,7 +15,7 @@ const options = {
 export async function fetchFavoriteMovies(query: string, currentPage: number){
 /* Récupération des vidéos favorites*/
     try {
-        const response = await fetch(`${BASE_URL}/account/${ACCOUNT_ID}/favorite/movies?language=en-US&page=1&`, options)
+        const response = await fetch(`${BASE_URL}/account/${ACCOUNT_ID}/favorite/movies?language=en-US&page=${currentPage}&sort_by=created`, options)
 
         const data = await response.json();
         return data.results
